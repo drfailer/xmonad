@@ -19,7 +19,7 @@ Config
   , lowerOnStart = True
   , persistent = True
   , hideOnStart = False
-  , iconRoot = "/home/drfailer/.config/xmobar/ics/"
+  , iconRoot = "/home/drfailer/.xmonad/xmobar/ics/"
   , allDesktops = True
   , commands =
       [ Run Network "enp3s0" [ "-t" , "<fc=#98be65><fn=1></fn></fc> <rx>kb <fc=#98be65><fn=1></fn></fc> <tx>kb"] 20
@@ -35,7 +35,7 @@ Config
   , sepChar = "%"
   , alignSep = "}{"
   , template =
-      " <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> <fn=0>%UnsafeStdinReader%</fn> }\
+      " <fn=0>%UnsafeStdinReader%</fn> } <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> \
        \{ <box type=Bottom mb=3 color=#56B6C2><fc=#56B6C2><fn=1></fn></fc> %battery%</box>  \
        \<action=`st -t htop -e htop`><box type=Bottom mb=3 color=#ff6c6b><fc=#ff6c6b><fn=1></fn></fc> %cpu%</box></action>  \
        \<action=`nitrogen`><box type=Bottom mb=3 color=#ECBE7B><fc=#ECBE7B><fn=1></fn></fc> %memory%</box></action>  \

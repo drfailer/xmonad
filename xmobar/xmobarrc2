@@ -19,7 +19,7 @@ Config
   , lowerOnStart = True
   , persistent = True
   , hideOnStart = False
-  , iconRoot = "/home/drfailer/.config/xmobar/ics/"
+  , iconRoot = "/home/drfailer/.xmonad/xmobar/ics/"
   , allDesktops = True
   , commands =
       [ Run Date "%a %b %d %Y %H:%M" "date" 50
@@ -31,7 +31,7 @@ Config
   , sepChar = "%"
   , alignSep = "}{"
   , template =
-      " <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> <fn=0>%UnsafeStdinReader%</fn> }\
+      " <fn=0>%UnsafeStdinReader%</fn> } <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> \
        \{ <action=`nemo ~/.scripts`><box type=Bottom mb=3 color=#51afef>%disku%</box></action>  \
        \<action=`alacritty -e calcurse -C ~/.config/calcurse -D ~/.local/share/calcurse`><box type=Bottom mb=3 color=#c678dd><fc=#c678dd><fn=1></fn></fc> %date%</box></action> "
   }
