@@ -1,0 +1,50 @@
+-------------------------------------------------------------------------------
+--     ██╗  ██╗███╗   ███╗ ██████╗ ██████╗  █████╗ ██████╗      ██████╗      --
+--     ╚██╗██╔╝████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██╔══██╗    ██╔═══██╗     --
+--      ╚███╔╝ ██╔████╔██║██║   ██║██████╔╝███████║██████╔╝    ██║   ██║     --
+--      ██╔██╗ ██║╚██╔╝██║██║   ██║██╔══██╗██╔══██║██╔══██╗    ██║   ██║     --
+--     ██╔╝ ██╗██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║██║  ██║    ╚██████╔╝     --
+--     ╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝      --
+-------------------------------------------------------------------------------
+-- 1
+Config
+  { font = "xft:xos4 Terminus:size=9:style=Regular:antialias=true:hinting=true"
+  , additionalFonts =
+      [ "xft:FontAwesome:pixelsize=14, Hack Nerd Font Mono:pixelsize=13"]
+  , bgColor = "#282C34"
+  , fgColor = "#bfbaba"
+  , borderColor = "#000000"
+  , border = FullB
+       -- , position = Static { xpos = 1085, ypos = 5, width = 1910, height = 21 }
+  , position = Static {xpos = 0, ypos = 0, width = 1920, height = 21}
+  , lowerOnStart = True
+  , persistent = True
+  , hideOnStart = False
+  , iconRoot = "/home/drfailer/.config/xmobar/ics/"
+  , allDesktops = True
+  , commands =
+      [ Run Network "enp3s0" [ "-t" , "<fc=#98be65><fn=1></fn></fc> <rx>kb <fc=#98be65><fn=1></fn></fc> <tx>kb"] 20
+      , Run Cpu ["-L", "3", "-H", "50", "--normal", "#87af87", "--high", "#a16946"] 20
+      , Run Memory ["-t", "mem: <usedratio>%", ""] 20
+      , Run Date "%a %b %d %Y %H:%M" "date" 50
+      , Run DiskU [("/", "<fc=#51afef><fn=1>\xf0c7</fn></fc> hdd: <free>")] [] 20
+      , Run Battery ["-t", "<left>%"] 360
+                    -- , Run Uptime ["-t", "uptime: <days>d <hours>h"] 360
+                    -- , Run Com "uname" ["-s","-r"] "" 36000
+      , Run UnsafeStdinReader
+      ]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template =
+      " <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> <fn=0>%UnsafeStdinReader%</fn> }\
+       \{ <box type=Bottom mb=3 color=#56B6C2><fc=#56B6C2><fn=1></fn></fc> %battery%</box>  \
+       \<action=`st -t htop -e htop`><box type=Bottom mb=3 color=#ff6c6b><fc=#ff6c6b><fn=1></fn></fc> %cpu%</box></action>  \
+       \<action=`nitrogen`><box type=Bottom mb=3 color=#ECBE7B><fc=#ECBE7B><fn=1></fn></fc> %memory%</box></action>  \
+       \<action=`nemo ~/.scripts`><box type=Bottom mb=3 color=#51afef>%disku%</box></action>  \
+       \<action=`brave`><box type=Bottom mb=3 color=#98be65>%enp3s0%</box></action>  \
+       \<action=`alacritty -e calcurse -C ~/.config/calcurse -D ~/.local/share/calcurse`><box type=Bottom mb=3 color=#c678dd><fc=#c678dd><fn=1></fn></fc> %date%</box></action> "
+  }
+       -- unused modules:
+       -- \<box type=Bottom mb=3 color=#d65d0e><fc=#d65d0e><fn=1></fn></fc> %uptime%</box>  \
+       -- \<box type=Bottom mb=3 color=#928374><fc=#928374><fn=1></fn></fc> %uname%</box>  \
+       -- \{  <fc=#ff6c6b><fn=1></fn></fc> %cpu%  <fc=#ECBE7B><fn=1></fn></fc> %memory%  %disku%  %enp3s0%  <fc=#c678dd><fn=1></fn></fc> %date% "
