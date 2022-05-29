@@ -40,8 +40,8 @@ theme0 =
     , promptBorder = "#000000"
     , mainBorderColor = "#1e2127"
     , fBorderColor = "#61AFEF"
-    , tabForeground = "#1e2127"
-    , tabBackGround = "#5f87af"
+    , tabForeground = "#61AFEF"
+    , tabBackGround = "#282c34"
     }
 
 theme3 :: MyTheme
