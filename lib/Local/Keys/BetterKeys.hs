@@ -93,8 +93,8 @@ myAdditionalKeys =
     , ("M-<Tab> j", sendMessage $ pullGroup D)
     , ("M-<Tab> m", withFocused (sendMessage . MergeAll))
     , ("M-<Tab> u", withFocused (sendMessage . UnMergeAll))
-    , ("M-;", onGroup W.focusUp')
-    , ("M-,", onGroup W.focusDown')
+    , ("M-,", onGroup W.focusUp')
+    , ("M-;", onGroup W.focusDown')
 
     -- Resize floating windows
     , ("M-S-<F1>", withFocused (keysResizeWindow (50, 0) (0, 1)))

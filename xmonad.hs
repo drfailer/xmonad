@@ -16,6 +16,7 @@ import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.EwmhDesktops
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
 import XMonad.Util.Run
@@ -45,12 +46,10 @@ main = do
   xmproc1 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/" ++ (xmobarConf currentTheme)
   xmproc2 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc1"
   xmproc3 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc2"
-  xmonad $
-    docks
-      def
-        { manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
+  xmonad $ ewmh def
+        { manageHook = myManageHook <+> manageDocks 
         , layoutHook = myLayout
-        , handleEventHook = mempty
+        , handleEventHook = docksEventHook
         , startupHook = myStartupHook
         , terminal = myTerminal
         , focusFollowsMouse = myFocusFollowsMouse
