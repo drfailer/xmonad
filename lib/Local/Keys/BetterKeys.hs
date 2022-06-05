@@ -145,4 +145,13 @@ myAdditionalKeys =
     , ("M-C-u", spawn "xdotool click --clearmodifiers 1")
     , ("M-C-i", spawn "xdotool click --clearmodifiers 2")
     , ("M-C-o", spawn "xdotool click --clearmodifiers 3")
+
+    -- Multimedia keys
+    , ("<XF86MonBrightnessDown>", spawn "exec xbacklight -dec 2")
+    , ("<XF86MonBrightnessUp>", spawn "exec xbacklight -inc 2")
+    , ("<XF86AudioMute>", spawn "exec pamixer -t")
+    , ("<XF86AudioLowerVolume>", spawn "exec pamixer -d 2")
+    , ("<XF86AudioRaiseVolume>", spawn "exec pamixer -i 2")
+    , ("<XF86Search>", searchPrompt myXPConfig)
+    , ("<Print>", spawn "gnome-screenshot -a")
     ]

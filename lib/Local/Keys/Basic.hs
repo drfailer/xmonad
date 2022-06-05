@@ -18,13 +18,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
     , ((modm, xK_space ), sendMessage NextLayout)
-
-    -- special keys
-    , ((0, 0x1008ff13), spawn "exec pamixer -i 2")
-    , ((0, 0x1008ff11), spawn "exec pamixer -d 2")
-    , ((0, 0x1008ff12), spawn "exec pamixer -t")
-    , ((0, xF86XK_MonBrightnessDown), spawn "exec xbacklight -dec 2")
-    , ((0, xF86XK_MonBrightnessUp), spawn "exec xbacklight -inc 2")
     ]
     ++
     [((m .|. modm, k), windows $ f i)
