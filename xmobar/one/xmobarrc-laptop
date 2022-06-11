@@ -1,12 +1,7 @@
 -------------------------------------------------------------------------------
---     ██╗  ██╗███╗   ███╗ ██████╗ ██████╗  █████╗ ██████╗      ██████╗      --
---     ╚██╗██╔╝████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██╔══██╗    ██╔═══██╗     --
---      ╚███╔╝ ██╔████╔██║██║   ██║██████╔╝███████║██████╔╝    ██║   ██║     --
---      ██╔██╗ ██║╚██╔╝██║██║   ██║██╔══██╗██╔══██║██╔══██╗    ██║   ██║     --
---     ██╔╝ ██╗██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║██║  ██║    ╚██████╔╝     --
---     ╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝      --
+-- THEME: one
+-- FILE: xmobar-laptop
 -------------------------------------------------------------------------------
--- 1
 Config
   { font = "xft:xos4 Terminus:size=9:style=Regular:antialias=true:hinting=true"
   , additionalFonts =
@@ -15,12 +10,11 @@ Config
   , fgColor = "#bfbaba"
   , borderColor = "#000000"
   , border = FullB
-       -- , position = Static { xpos = 1085, ypos = 5, width = 1910, height = 21 }
-  , position = Static {xpos = 0, ypos = 0, width = 1920, height = 21}
+  , position = Static {xpos = 0, ypos = 0, width = 1366, height = 21}
   , lowerOnStart = True
   , persistent = True
   , hideOnStart = False
-  , iconRoot = "/home/drfailer/.xmonad/xmobar/ics/"
+  , iconRoot = "/home/failer/.xmonad/xmobar/ics/"
   , allDesktops = True
   , commands =
       [ Run Network "enp3s0" [ "-t" , "<fc=#98be65><fn=1></fn></fc> <rx>kb <fc=#98be65><fn=1></fn></fc> <tx>kb"] 20

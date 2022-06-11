@@ -24,8 +24,8 @@ data MyTheme =
     , tabBackGround :: String
     }
 
-theme0 :: MyTheme
-theme0 =
+oneTheme :: MyTheme
+oneTheme =
   MyTheme
     { colorCurrent = xmobarColor "#1e2127,#E5C07B" ""
     , colorHiddenNoWindows = xmobarColor "#61AFEF" ""
@@ -44,8 +44,8 @@ theme0 =
     , tabBackGround = "#282c34"
     }
 
-theme3 :: MyTheme
-theme3 =
+gruvboxTheme :: MyTheme
+gruvboxTheme =
   MyTheme
     { colorCurrent = xmobarColor "#282828,#458588:0" ""
     , colorHiddenNoWindows = xmobarColor "#d3869b" ""
@@ -85,7 +85,7 @@ myFocusedBorderColor = fBorderColor currentTheme
 -- CURRENT THEME:
 --------------------------------------------------------------------------------
 currentTheme :: MyTheme
-currentTheme = theme0
+currentTheme = oneTheme
 
 --------------------------------------------------------------------------------
 -- TABS THEME:

@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------
+-- THEME: gruvbox
+-- FILE: xmobar2
+-------------------------------------------------------------------------------
+Config { font = "xft:xos4 Terminus:size=9:style=Regular:antialias=true:hinting=true"
+       , additionalFonts =
+           [ "xft:FontAwesome:pixelsize=14, Hack Nerd Font Mono:pixelsize=13"]
+       -- , bgColor = "#282828"
+       , bgColor = "#1d2021"
+       , fgColor = "#bfbaba"
+       -- , alpha = 200
+       -- , borderColor = "#928374"
+       , borderColor = "#282828"
+       -- , border = FullB
+       , border = BottomB
+       , position = Static {xpos = 3840, ypos = 0, width = 1080, height = 21}
+       , lowerOnStart = True
+       , persistent = True
+       , hideOnStart = False
+       , iconRoot = "/home/failer/.xmonad/xmobar/ics/"
+       , allDesktops = True
+       , commands = [ Run Network "enp3s0" ["-t", "<fc=#98971a><fn=1></fn></fc> <rx>kb <fc=#98971a><fn=1></fn></fc> <tx>kb"] 20
+                    , Run Cpu [ "-L", "3", "-H", "50" ,"--normal", "#87af87" ,"--high", "#a16946" ] 20
+                    , Run Memory ["-t" ,"mem: <usedratio>%", ""] 20
+                    , Run Date "%a %b %d %Y %H:%M" "date" 50
+                    , Run DiskU [("/", "<fc=#458588><fn=1>\xf0c7</fn></fc> hdd: <free>")] [] 20
+                    , Run Battery ["-t", "<left>%"] 360
+                    -- , Run Uptime ["-t", "uptime: <days>d <hours>h"] 360
+                    -- , Run Com "uname" ["-s","-r"] "" 36000
+		                , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template =
+       " <fn=0>%UnsafeStdinReader%</fn> } <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> \
+	    \<action=`nemo ~/.scripts`><box type=Bottom mb=3 color=#458588>%disku%</box></action>  \
+	    \<action=`alacritty -e calcurse -C ~/.config/calcurse -D ~/.local/share/calcurse`><box type=Bottom mb=3 color=#b16286><fc=#b16286><fn=1></fn></fc> %date%</box></action> "
+       }
+       -- unused modules:
+       -- \<box type=Bottom mb=3 color=#d65d0e><fc=#d65d0e><fn=1></fn></fc> %uptime%</box>  \
+       -- \<box type=Bottom mb=3 color=#928374><fc=#928374><fn=1></fn></fc> %uname%</box>  \
