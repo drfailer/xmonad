@@ -10,7 +10,7 @@ Config
   , fgColor = "#bfbaba"
   , borderColor = "#000000"
   , border = FullB
-  , position = Static { xpos = 1085, ypos = 5, width = 1910, height = 21 }
+  , position = Static { xpos = 1920, ypos = 0, width = 1920, height = 21 }
   , lowerOnStart = True
   , persistent = True
   , hideOnStart = False
