@@ -112,7 +112,12 @@ myAdditionalKeys =
     , ("M-S-a m", spawn $ termLaunch ++ "neomutt")
     , ("M-S-a f", spawn "brave")
     , ("M-S-a e", spawn "emacs")
-    , ("M-S-a o", spawn "emacsclient -c")
+
+    -- emacsclient
+    , ("M-e e", spawn "emacsclient -c")
+    , ("M-e s", spawn "emacsclient -c -e '(eshell)'")
+    , ("M-e t", spawn "emacsclient -c -e '(term \"zsh\")'")
+    , ("M-e d", spawn "emacsclient -c -e '(dired \"~\")'")
 
     -- dmenu scripts
     -- , ("M-p", spawn "dmenu_run -p 'Run:'")

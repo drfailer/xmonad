@@ -43,11 +43,11 @@ import Local.Workspaces.WS
 -- MAIN:
 --------------------------------------------------------------------------------
 main = do
-  xmproc1 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/" ++ (xmobarConf currentTheme)
-  xmproc2 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc1"
-  xmproc3 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc2"
+  xmproc1 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/one/xmobarrc0"
+  xmproc2 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/one/xmobarrc1"
+  xmproc3 <- spawnPipe $ "xmobar -x 0 ~/.xmonad/xmobar/one/xmobarrc2"
   xmonad $ ewmh def
-        { manageHook = myManageHook <+> manageDocks 
+        { manageHook = myManageHook <+> manageDocks
         , layoutHook = myLayout
         , handleEventHook = docksEventHook
         , startupHook = myStartupHook
@@ -65,8 +65,8 @@ main = do
             myLogHook <+>
             dynamicLogWithPP
               xmobarPP
-                {ppOutput = \x -> hPutStrLn xmproc1 x >> hPutStrLn xmproc2 x >> hPutStrLn xmproc3 x 
-                , ppCurrent = colorCurrent currentTheme . wrap " " " "
+                {ppOutput = \x -> hPutStrLn xmproc1 x >> hPutStrLn xmproc2 x >> hPutStrLn xmproc3 x
+                , ppCurrent = colorCurrent currentTheme . wrap "<box type=Bottom mb=3 color=#56B6C2> " " </box>"
                 , ppHiddenNoWindows = colorHiddenNoWindows currentTheme
                 , ppHidden = colorHidden currentTheme . wrap "\"" ""
                 , ppTitle = colorTitle currentTheme . shorten 30

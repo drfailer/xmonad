@@ -13,7 +13,7 @@ import XMonad.Util.SpawnOnce
 --------------------------------------------------------------------------------
 myStartupHook = do
   spawnOnce "nitrogen --restore &"
-  -- spawnOnce "emacs --daemon"
+  spawnOnce "emacs --daemon"
   setWMName "LG3D"
   -- spawnOnce "conky"
   -- spawnOnce "compton --config ~/.config/compton.conf"

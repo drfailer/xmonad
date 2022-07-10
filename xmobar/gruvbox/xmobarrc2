@@ -17,7 +17,7 @@ Config { font = "xft:xos4 Terminus:size=9:style=Regular:antialias=true:hinting=t
        , lowerOnStart = True
        , persistent = True
        , hideOnStart = False
-       , iconRoot = "/home/failer/.xmonad/xmobar/ics/"
+       , iconRoot = "/home/drfailer/.xmonad/xmobar/ics/"
        , allDesktops = True
        , commands = [ Run Network "enp3s0" ["-t", "<fc=#98971a><fn=1></fn></fc> <rx>kb <fc=#98971a><fn=1></fn></fc> <tx>kb"] 20
                     , Run Cpu [ "-L", "3", "-H", "50" ,"--normal", "#87af87" ,"--high", "#a16946" ] 20
@@ -32,7 +32,7 @@ Config { font = "xft:xos4 Terminus:size=9:style=Regular:antialias=true:hinting=t
        , sepChar = "%"
        , alignSep = "}{"
        , template =
-       " <fn=0>%UnsafeStdinReader%</fn> } <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> \
+       " <fn=0>%UnsafeStdinReader%</fn> } <action=`gnome-screenshot --interactive`><icon=haskell_20.xpm/></action> { \
 	    \<action=`nemo ~/.scripts`><box type=Bottom mb=3 color=#458588>%disku%</box></action>  \
 	    \<action=`alacritty -e calcurse -C ~/.config/calcurse -D ~/.local/share/calcurse`><box type=Bottom mb=3 color=#b16286><fc=#b16286><fn=1></fn></fc> %date%</box></action> "
        }

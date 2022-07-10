@@ -27,11 +27,11 @@ data MyTheme =
 oneTheme :: MyTheme
 oneTheme =
   MyTheme
-    { colorCurrent = xmobarColor "#1e2127,#E5C07B" ""
-    , colorHiddenNoWindows = xmobarColor "#61AFEF" ""
-    , colorHidden = xmobarColor "#82AAFF" ""
+    { colorCurrent = xmobarColor "#61AFEF,#393d45" ""
+    , colorHiddenNoWindows = xmobarColor "#c678dd" ""
+    , colorHidden = xmobarColor "#c678dd" ""
     , colorTitle = xmobarColor "#a9a1e1" ""
-    , colorVisible = xmobarColor "#E5C07B" ""
+    , colorVisible = xmobarColor "#61AFEF" ""
     , xmobarConf = "xmobarrc"
     , colorSep = "  " -- "<fc=#666666> \xe0b1 </fc>"
     , promptFG = "#ABB2BF"

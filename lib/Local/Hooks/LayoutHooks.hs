@@ -36,19 +36,19 @@ myLayout =
   where
     -- Put space between windows
     tiled =
-      mySpacing 4 $
+      mySpacing 0 $
       addTabs shrinkText myTabTheme $
       configurableNavigation noNavigateBorders $
       subLayout [] (Simplest) $
       ResizableTall nmaster delta ratio []
     treeCols =
-      mySpacing 4 $
+      mySpacing 0 $
       addTabs shrinkText myTabTheme $
       configurableNavigation noNavigateBorders $
       subLayout [] (Simplest) $
        ThreeColMid nmaster delta ratio
-    grid = mySpacing 4 $ windowNavigation $ Grid
-    twoPane = mySpacing 4 $ windowNavigation $ TwoPane delta ratio
+    grid = mySpacing 0 $ windowNavigation $ Grid
+    twoPane = mySpacing 0 $ windowNavigation $ TwoPane delta ratio
     full = noBorders Full
     -- The default number of windows in the master pane
     nmaster = 1

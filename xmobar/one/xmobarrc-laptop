@@ -17,7 +17,7 @@ Config
   , iconRoot = "/home/failer/.xmonad/xmobar/ics/"
   , allDesktops = True
   , commands =
-      [ Run Network "enp3s0" [ "-t" , "<fc=#98be65><fn=1></fn></fc> <rx>kb <fc=#98be65><fn=1></fn></fc> <tx>kb"] 20
+      [ Run Network "wlp5s0" [ "-t" , "<fc=#98be65><fn=1></fn></fc> <rx>kb <fc=#98be65><fn=1></fn></fc> <tx>kb"] 20
       , Run Cpu ["-L", "3", "-H", "50", "--normal", "#87af87", "--high", "#a16946"] 20
       , Run Memory ["-t", "mem: <usedratio>%", ""] 20
       , Run Date "%a %b %d %Y %H:%M" "date" 50
@@ -35,7 +35,7 @@ Config
        \<action=`st -t htop -e htop`><box type=Bottom mb=3 color=#ff6c6b><fc=#ff6c6b><fn=1></fn></fc> %cpu%</box></action>  \
        \<action=`nitrogen`><box type=Bottom mb=3 color=#ECBE7B><fc=#ECBE7B><fn=1></fn></fc> %memory%</box></action>  \
        \<action=`nemo ~/.scripts`><box type=Bottom mb=3 color=#51afef>%disku%</box></action>  \
-       \<action=`brave`><box type=Bottom mb=3 color=#98be65>%enp3s0%</box></action>  \
+       \<action=`brave`><box type=Bottom mb=3 color=#98be65>%wlp5s0%</box></action>  \
        \<action=`alacritty -e calcurse -C ~/.config/calcurse -D ~/.local/share/calcurse`><box type=Bottom mb=3 color=#c678dd><fc=#c678dd><fn=1></fn></fc> %date%</box></action> "
   }
        -- unused modules:
